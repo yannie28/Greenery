@@ -1,0 +1,121 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="example.xml"/>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="Signin" class="dao.Signin" method="execute">
+            <result name = "Admin">
+                /admin.jsp
+            </result>
+            <result name = "Main">
+                /admin.jsp
+            </result>
+            <result name = "Customer">
+                /index.jsp
+            </result>
+            <result name = "Inactive">
+                /login.jsp
+            </result>
+            <result name = "Failed">
+                /login.jsp
+            </result>
+        </action>
+        
+        <action name="Signout" class = "dao.Signout" method = "execute">
+            <result name = "Success">
+                /index.jsp
+            </result>
+        </action>
+        
+        <action name = "Register" class = "dao.UserManagement" method = "execute">
+            <result name = "Failed">
+                /register.jsp
+            </result>
+            <result name = "Success">
+                /register.jsp
+            </result>
+        </action>
+        
+        <action name = "ViewUsers" class = "dao.UserManagement" method = "execute">
+            <result name = "Success">
+                /displayRecord.jsp
+            </result>
+        </action>
+        
+        <action name = "CreateUsers" class = "dao.UserManagement" method = "execute">
+            <result name = "Success">
+                /create.jsp
+            </result>
+            <result name = "Failed">
+                /create.jsp
+            </result>
+        </action>
+        
+        <action name = "UpdateUsers" class = "dao.UserManagement" method = "execute">
+            <result name = "SuccessUpdate">
+                /updateAccount.jsp
+            </result>
+            <result name = "Failed">
+                /updateAccount.jsp
+            </result>
+        </action>
+        
+        <action name = "ViewAccount" class="dao.UserManagement" method = "execute">
+            <result name = "Success">
+                /updateAccount.jsp
+            </result>
+            <result name = "Failed">
+                /updateAccount.jsp
+            </result>
+        </action>
+        
+        <action name = "UserManagement" class = "dao.UserManagement" method = "execute">
+            <result name = "SuccessDelete">
+                /displayRecord.jsp
+            </result>
+            <result name = "SuccessUpdate">
+                /displayRecord.jsp
+            </result>
+            <result name = "Failed">
+                /displayRecord.jsp
+            </result>
+        </action>
+        
+        <action name = "InventoryUser" class = "dao.InventoryUser" method = "execute">
+            <result name = "Success">
+                /shop.jsp
+            </result>
+        </action>
+        
+        <action name = "ViewInventory" class = "dao.InventoryAdmin" method = "execute">
+            <result name = "Success">
+                /displayItems.jsp
+            </result>
+        </action>
+        
+        <action name = "CreateInventory" class = "dao.InventoryAdmin" method = "execute">
+            <result name = "Success">
+                /insertItems.jsp
+            </result>
+            <result name = "Failed">
+                /insertItems.jsp
+            </result>
+        </action>
+        
+        <action name = "InventoryAdmin" class = "dao.InventoryAdmin" method = "execute">
+            <result name = "SuccessDelete">
+                /displayItems.jsp
+            </result>
+            <result name = "SuccessUpdate">
+                /displayItems.jsp
+            </result>
+            <result name = "Failed">
+                /displayItems.jsp
+            </result>
+        </action>
+        
+    </package>
+</struts>
